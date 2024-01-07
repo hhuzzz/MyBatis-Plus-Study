@@ -2,7 +2,10 @@ package com.itheima.mp.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.itheima.mp.domain.po.User;
-import org.springframework.stereotype.Service;
+import com.itheima.mp.domain.query.UserQuery;
+import com.itheima.mp.domain.vo.UserVO;
+
+import java.util.List;
 
 /**
  * IUserService 用户Service接口
@@ -13,4 +16,6 @@ import org.springframework.stereotype.Service;
 public interface IUserService extends IService<User> {
 
     void deductBalance(Long id, Integer money);
+
+    List<UserVO> queryUsers(UserQuery query);
 }
